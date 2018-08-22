@@ -3,52 +3,76 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnQuery").click(function () {
+                var account = $("#tbAccount").val();
+                var password = $("#tbPassword").val();
+                var url = "http://47.93.242.95:12580/login?account=" + account + "&password=" + password
+                $.get(url, function (data, status) {
+                    $("#pName").text("代理姓名："+data.name);
+                    $("#pLevel").text("代理等级：" + data.privilege_level);
+                    $("#pGem").text("当前房卡：" + data.gems);
+                })
+            });
+            $(".gem").click(function () {
+                var index = $(".gem").index(this);
+                var price = [100, 200, 300, 1000, 2000];
+                var i = 0;
+                $(".gem").each(function () {
+                    var c = $(".gem").eq(i);
+                    if (i == index) {
+                        c.addClass("gem1");
+                        $("#pPrice").text("售价：" + price[i]+" 元");
+                    } else {
+                        c.removeClass("gem1");
+                    }
+                    ++i;
+                });
+            });
+        });
+    </script>
+    <style type="text/css">
+        .gemjianbian {
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2b3694), to(#069cd4));
+        }
+        .gem1 {
+            background: #069cd4;
+            color:white;
+        }
+    </style>
     <title></title>
 </head>
 <body>
-    <div style="text-align:center">支付</div>
-	<div>
-		<input id="Text1" type="text" placeholder="请输入您的代理账号" style="font-size:medium;width:90%" />
-	</div>
-	<hr style="height:1px;border:none;border-top:1px solid #555555;" />
-	<div>
-		<table>
-			<tr>
-				<td>代理姓名：</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>代理等级：</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>当前房卡：</td>
-				<td></td>
-			</tr>
-		</table>
-	</div>
-	<hr style="height:1px;border:none;border-top:1px solid #555555;" />
-	<table>
-		<tr>
-			<td colspan="2">
-				<table>
-					<tr>
-						<td><input id="Button1" type="button" value="400房卡" style="border-radius:5px;height:50px;width:100px;" /></td>
-						<td><input id="Button1" type="button" value="800房卡" style="border-radius:5px;height:50px;width:100px;" /></td>
-						<td><input id="Button1" type="button" value="1200房卡" style="border-radius:5px;height:50px;width:100px;" /></td>
-					</tr>
-					<tr>
-						<td><input id="Button1" type="button" value="2000房卡" style="border-radius:5px;height:50px;width:100px;" /></td>
-						<td><input id="Button1" type="button" value="4000房卡" style="border-radius:5px;height:50px;width:100px;" /></td>
-						<td></td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-		<tr><td>&nbsp;</td><td></td></tr>
-		<tr><td>售价：</td><td></td></tr>
-		<tr><td>&nbsp;</td><td></td></tr>
-		<tr><td colspan="2"><input id="Button1" type="button" value="微信支付" style="border-radius:5px;height:40px;width:300px;" /></td></tr>
-	</table>
+    <div style="text-align:center">支付(测试中，尚未实装)</div>
+    <div style="text-align:center;">
+        <input id="tbAccount" type="text" placeholder="请输入您的代理账号" style="font-size:medium;margin-top:10px;width:90%" />
+        <br />
+        <input id="tbPassword" type="text" placeholder="请输入您的代理密码" style="font-size:medium;margin-top:10px;width:90%" />
+        <br />
+        <button id="btnQuery" style="font-size:medium;margin-top:10px;">查询</button>
+    </div>
+    <hr style="height:1px;border:none;border-top:1px solid #555555;" />
+    <div>
+        <p id="pName">代理姓名：</p>
+        <p id="pLevel">代理等级：</p>
+        <p id="pGem">当前房卡：</p>
+    </div>
+    <hr style="height:1px;border:none;border-top:1px solid #555555;" />
+    <p>
+        <div class="gem" id="gem400" style="border:1px solid black;float:left;height:50px;line-height:50px;text-align:center;width:30%">400房卡</div>
+        <div class="gem" id="gem800" style="border:1px solid black;float:left;height:50px;line-height:50px;margin-left:10px;text-align:center;width:30%">800房卡</div>
+        <div class="gem" id="gem1200" style="border:1px solid black;float:left;height:50px;line-height:50px;margin-left:10px;text-align:center;width:30%">1200房卡</div>
+    </p>
+    <p>
+        <div class="gem" id="gem2000" style="border:1px solid black;float:left;height:50px;line-height:50px;margin-top:10px;text-align:center;width:30%">4000房卡</div>
+        <div class="gem" id="gem4000" style="border:1px solid black;float:left;height:50px;line-height:50px;margin-top:10px;margin-left:10px;text-align:center;width:30%">8000房卡</div>
+    </p>
+    <br />
+    <div style="clear:both;padding-top:10px;"><p id="pPrice">售价：</p></div>
+    <div style="text-align:center;">
+        <button id="btnPay" style="font-size:medium;margin-top:10px;">微信支付</button>
+    </div>
 </body>
 </html>
