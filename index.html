@@ -46,34 +46,34 @@
     <title></title>
 </head>
 <body>
-    <div style="text-align:center">支付(测试中，尚未实装)</div>
+    <h1 style="font-size:1em;line-height:24px;font-weight:normal;text-align:center">充值(测试中，尚未实装)</h1>
     <div style="text-align:center;">
-        <input id="tbAccount" type="text" placeholder="请输入充值的代理账号" style="font-size:medium;margin-top:10px;width:80%;height:32px;border-radius:5px;border:1px solid #bbbbbb;padding-left:10px" />
+        <input id="tbAccount" type="text" placeholder="请输入充值的代理账号" style="font-size:medium;width:90%;height:40px;border-radius:5px;border:1px solid #bbbbbb;padding-left:10px" />
         <br />
-        <input id="tbPassword" type="text" placeholder="请输入充值的代理密码" style="font-size:medium;margin-top:10px;width:90%;height:32px;border-radius:5px;border:1px solid #bbbbbb;padding-left:10px" />
+        <input id="tbPassword" type="text" placeholder="请输入充值的代理密码" style="font-size:medium;margin-top:10px;width:90%;height:40px;border-radius:5px;border:1px solid #bbbbbb;padding-left:10px" />
         <br />
-        <button id="btnQuery" style="font-size:medium;margin-top:10px;">查询</button>
+        <button id="btnQuery" style="width:30%;height:32px;font-size:medium;margin-top:10px;background: #069cd4;border: none;border-radius: 30px;color: #fff">查询</button>
     </div>
-    <hr style="height:1px;border:none;border-top:1px solid #bbbbbb;" />
+    <hr style="height:1px;border:none;border-top:1px solid #bbbbbb;margin-top:10px" />
     <div>
         <p id="pName">代理姓名：</p>
         <p id="pLevel">代理等级：</p>
         <p id="pGem">当前房卡：</p>
     </div>
-    <hr style="height:1px;border:none;border-top:1px solid #bbbbbb;" />
+    <hr style="height:1px;border:none;border-top:1px solid #bbbbbb;margin-bottom:20px" />
     <p>
-        <div class="gem" id="gem400" style="border:1px solid #069cd4;float:left;height:64px;line-height:64px;border-radius:10px;text-align:center;width:30%"><span style="font-size:28px">400</span><span style="font-size:14px">房卡</span></div>
-        <div class="gem" id="gem800" style="border:1px solid #069cd4;float:left;height:64px;line-height:64px;border-radius:10px;margin-left:10px;text-align:center;width:30%"><span style="font-size:28px">800</span><span style="font-size:14px">房卡</span></div>
-        <div class="gem" id="gem1200" style="border:1px solid #069cd4;float:left;height:64px;line-height:64px;border-radius:10px;margin-left:10px;text-align:center;width:30%"><span style="font-size:28px">1200</span><span style="font-size:14px">房卡</span></div>
+        <div class="gem" id="gem400" style="border:1px solid #069cd4;float:left;height:64px;line-height:64px;border-radius:10px;text-align:center;width:30%"><span style="font-size:1.7em">400</span><span style="font-size:0.8em">房卡</span></div>
+        <div class="gem" id="gem800" style="border:1px solid #069cd4;float:left;height:64px;line-height:64px;border-radius:10px;margin-left:10px;text-align:center;width:30%"><span style="font-size:1.7em">800</span><span style="font-size:0.8em">房卡</span></div>
+        <div class="gem" id="gem1200" style="border:1px solid #069cd4;float:left;height:64px;line-height:64px;border-radius:10px;margin-left:10px;text-align:center;width:30%"><span style="font-size:1.7em">1200</span><span style="font-size:0.8em">房卡</span></div>
     </p>
     <p>
-        <div class="gem" id="gem2000" style="border:1px solid #069cd4;float:left;height:64px;line-height:64px;border-radius:10px;margin-top:10px;text-align:center;width:30%"><span style="font-size:28px">4000</span><span style="font-size:14px">房卡</span></div>
-        <div class="gem" id="gem4000" style="border:1px solid #069cd4;float:left;height:64px;line-height:64px;border-radius:10px;margin-top:10px;margin-left:10px;text-align:center;width:30%"><span style="font-size:28px">8000</span><span style="font-size:14px">房卡</span></div>
+        <div class="gem" id="gem2000" style="border:1px solid #069cd4;float:left;height:64px;line-height:64px;border-radius:10px;margin-top:10px;text-align:center;width:30%"><span style="font-size:1.7em">4000</span><span style="font-size:0.8em">房卡</span></div>
+        <div class="gem" id="gem4000" style="border:1px solid #069cd4;float:left;height:64px;line-height:64px;border-radius:10px;margin-top:10px;margin-left:10px;text-align:center;width:30%"><span style="font-size:1.7em">8000</span><span style="font-size:0.8em">房卡</span></div>
     </p>
     <br />
-    <div style="clear:both;padding-top:10px;"><p id="pPrice">售价：</p></div>
+    <div style="clear:both;padding-top:30px;"><p id="pPrice">售价：</p></div>
     <div style="text-align:center;">
-        <button id="btnPay" style="font-size:medium;margin-top:10px;">微信支付</button>
+        <button id="btnPay" style="font-size:medium;margin-top:10px;margin-bottom:20px;width:90%;height:40px;border-radius:90px;background: #00c800;border:none;"><div style="width:120px;margin:0 auto"><div style="width:30px;height:40px;background:url(weixin.svg) no-repeat left center;background-size:30px 30px;float:left"></div><div style="float:left;line-height:40px;margin-left:10px;color: #fff">微信支付</div></div></button>
     </div>
 </body>
 </html>
